@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      background: lightpink;
+    }
+  </style>
+</head>
+<body>
+<input type="button" value="点击按钮添加表格" id="1">
+<div id="dv"></div>
+<script>
+  var arr = [
+    {name: '百度', herf: '1'},
+    {name: '谷歌', herf: '2'},
+    {name: '360', herf: '3'},
+    {name: 'ie', herf: '4'},
+    {name: '搜狗', herf: '5'}
+  ];
+  document.getElementById('1').onclick = function () {
+    //先创建元素，并添加
+    var tableobj = document.createElement('table');
+    document.getElementById('dv').appendChild(tableobj);
+
+    for (var x = 0; x < arr.length; x++) {
+      //创建行
+      var trobj = document.createElement('tr');
+      tableobj.appendChild(trobj);
+      //分别创建俩个列
+      var td1 = document.createElement('td');
+      td1.innerHTML = arr[x].name;
+      trobj.appendChild(td1);
+
+      var td2 = document.createElement('td');
+      td2.innerHTML = "<a href=" + arr[x].href + ">" + arr[x].name + "</a>";
+      trobj.appendChild(td2);
+    }
+  };
+</script>
+
+
+
+
+
+
+<input type="button" value="点击按钮添加表格(只会添加一次，不会重复添加)" id="2">
+<div id="div"></div>
+<script>
+  var arr = [
+    {name: '百度', herf: '1'},
+    {name: '谷歌', herf: '2'},
+    {name: '360', herf: '3'},
+    {name: 'ie', herf: '4'},
+    {name: '搜狗', herf: '5'}
+  ];
+  document.getElementById('2').onclick = function () {
+
+    //具体见51
+   if (!document.getElementById('11')){
+     //先创建元素，并添加
+     var tableobj = document.createElement('table');
+     tableobj.id='11';
+     document.getElementById('div').appendChild(tableobj);
+
+     for (var x = 0; x < arr.length; x++) {
+       //创建行
+       var trobj = document.createElement('tr');
+       tableobj.appendChild(trobj);
+       //分别创建俩个列
+       var td1 = document.createElement('td');
+       td1.innerHTML = arr[x].name;
+       trobj.appendChild(td1);
+
+       var td2 = document.createElement('td');
+       td2.innerHTML = "<a href=" + arr[x].href + ">" + arr[x].name + "</a>";
+       trobj.appendChild(td2);
+     }
+   }
+  };
+</script>
+</body>
+</html>

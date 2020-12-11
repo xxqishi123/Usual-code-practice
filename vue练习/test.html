@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let str2 = [1, 2, 3, 4, 5, 6]
+
+        let str1 = 'hello world'
+
+        let str = [{
+            id: '1',
+            name: 'yyb',
+            sex() {
+                sexs: 'boy'
+            }
+        }, {
+            id: '2',
+            name: 'yyb1',
+            sex() {
+                sexs: 'girl'
+            }
+        }];
+
+        // find方法   找符合条件的成员
+        var dv = str.find((item, item2, item3) => {
+            return item.id == 1;
+        })
+        console.log(dv);
+
+        //    findlndex（）方法   找符合条件的成员位置
+        // var dx = str.findIndex((item, val) => {
+        //     return item.id == 1
+        // })
+        // console.log(dx);
+
+        // includes（）方法 包含关系，找是否含有的成员
+        // var dx = str2.includes(1);
+        // console.log(dx);
+
+        // startsWith()找字符串头部，，endsWith()找字符串尾部
+        // let dx = str1.startsWith('h');
+        // let dv = str1.endsWith('d');
+        // console.log(dx);
+        // console.log(dv);
+
+        // repeat()方法 循环重复
+        // let dv = str.repeat((item) => {
+        //     return item.id(2)
+        // });
+        // console.log(dv);
+
+        const stry = new Set([1, 2, 3, 4, 5, 6])
+
+        // stry.add('a').add('b').add('c');
+
+        // stry.delete('b');
+
+        // console.log(stry.has(3));
+
+        // stry.clear();
+
+        // let dxx = stry.forEach((items) => {
+        //     console.log(items);
+        // });
+        // console.log(dxx);
+        // console.log(stry);
+    </script>
+
+</body>
+
+</html>

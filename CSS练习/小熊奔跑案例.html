@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <style>
+    img{
+      position:absolute;
+    }
+    div{
+      position: relative;
+      top: 220px;
+      width: 200px;
+      height: 100px;
+      background: url("../img/bear.png") no-repeat;
+
+     animation: move .8s steps(8) infinite,move2 3s forwards;
+    }
+
+    @keyframes move {
+    0%{
+
+    }
+      100%{
+       background-position: -1600px 0;
+      }
+    }
+
+    @keyframes move2 {
+      0%{}
+      100%{
+        transform: translate(1000px,0);
+      }
+    }
+  </style>
+
+</head>
+<body>
+<img src="../img/bg1.png" alt="">
+  <div></div>
+</body>
+</html>

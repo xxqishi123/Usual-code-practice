@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击按钮变更图片" id="1">
+<img src="../img/3.jpg" alt="" id="2">
+<script>
+  document.getElementById('1').onclick = function () {
+    document.getElementById('2').src = '../img/1.jpg';
+  }
+</script>
+
+<input type="button" value="点击按钮修改图片" id="3">
+<img src="../img/3.jpg" alt="" id="4">
+<script>
+
+  function x(id) {
+    return id = document.getElementById(id);
+  }
+
+  x('3').onclick = function () {
+    x('4').src = '../img/1.jpg';
+  }
+</script>
+
+
+</body>
+</html>

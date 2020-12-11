@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* .red {
+            color: red;
+        }
+        
+        .size {
+            font-size: 30px;
+        } */
+    </style>
+
+</head>
+
+<body>
+
+    <script src="../VUE/vue.js"></script>
+
+    <div id="dv">
+        <p :style="{color:'red','font-size':'50px'}">我是P标签</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#dv',
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

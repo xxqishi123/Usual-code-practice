@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+        disabled:属性禁用的意思
+        disabled=’true‘允许使用
+        disabled=’false‘禁用
+
+
+<input type="button" value="点击按钮修改下拉菜单" id="1">
+<select name="" id="">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3" id="2">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+</select>
+<script src="JS.js"></script>
+<script>
+  id$(1).onclick = function () {
+    id$(2).selected = true;
+  }
+</script>
+
+<br>
+<input type="button" value="点击按钮修改文本域文字" id="3">
+<textarea name="" id="4" cols="10" rows="3">123456789</textarea>
+<script src="JS.js"></script>
+<script>
+  id$(3).onclick=function () {
+//    id$(4).innerText='987654321';
+      id$(4).value='987654321';
+  }
+</script>
+</body>
+</html>

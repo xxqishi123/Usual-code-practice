@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    img {
+      position: absolute;
+    }
+
+    body {
+      height: 10000px;
+    }
+  </style>
+</head>
+<body>
+<img src="../img/2.jpg" alt="" id="im">
+
+<script>
+  //鼠标在页面中移动，图片跟着鼠标移动,添加鼠标  移动  事件
+  document.onmousemove = function (e) {
+    //可视区域的横坐标
+    //可视区域的纵坐标
+    //此方法谷歌和火狐支持，ie8不支持
+    document.getElementById('im').style.left = e.clientX + 'px';
+    document.getElementById('im').style.top = e.clientY + 'px';
+  };
+
+  //此方法谷歌和火狐不支持，ie8支持
+  document.onmousemove = function () {
+    //可视区域的横坐标
+    //可视区域的纵坐标
+    document.getElementById('im').style.left = window.event + 'px';
+    document.getElementById('im').style.top = window.event + 'px';
+  };
+
+  //兼容代码
+  document.onmousemove = function (e) {
+    e = e || window.event;
+    document.getElementById('im').style.left = e + 'px';
+    document.getElementById('im').style.top = e + 'px';
+  };
+  //此兼容代码有bug，上面计算的是可是区域，有滚动条的话，上下拖动滚动条纵坐标（Y轴）的位置就会偏离，图片就不会跟着鼠标了
+
+  //解决方法
+  document.onmousemove = function (e) {
+    document.getElementById('im').style.left = e.pageX + 'px';
+    document.getElementById('im').style.left = e.pageY + 'px';
+  };
+
+  //上面代码ie8不支持，下面是兼容代码
+
+
+  function f1() {
+    return {
+      top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+
+      left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
+    };
+  }
+
+  //clientX+向左卷曲的宽度
+  //clientY+向上卷曲的宽度
+  document.onmousemove = function () {
+    document.getElementById('im').style.left = window.event.clientX + f1().left + 'px';
+    document.getElementById('im').style.top = window.event.clientY + f1().top + 'px';
+  };
+
+
+</script>
+
+
+<script>
+  //获取body
+  console.log(document.body);//获取的是元素-标签
+
+  //获取title
+  console.log(document.title);//获取的是标签中的值
+
+  //获取html
+  console.log(document.documentElement);
+</script>
+</body>
+</html>

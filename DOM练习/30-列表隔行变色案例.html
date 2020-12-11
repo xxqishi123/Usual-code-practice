@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击按钮隔行变色" id="1">
+<!--第一个UL里面的LI隔行变色；偶hotpink奇red-->
+<ul id="2">
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+</ul>
+
+<ul>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+</ul>
+<script>
+  document.getElementById('1').onclick=function () {
+//    获取所有li的标签
+    var i=document.getElementById('2').getElementsByTagName('li');
+    for(var j=0;j<i.length;j++){
+//      if(j%2==0){
+//      偶数
+//        i[j].style.backgroundColor='red';
+//      }else {
+//        i[j].style.backgroundColor='pink';
+//      }
+      i[j].style.backgroundColor=j%2==0?'red':'pink';
+    }
+  };
+</script>
+</body>
+</html>

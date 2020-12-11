@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="btn1">
+
+    <span id="btn2" value=''>请输入用户名</span>
+
+    <script>
+        var amg = /^[a-zA-z0-9]{1,3}$/;
+
+        var dx = document.getElementById('btn1');
+        var dv = document.getElementById('btn2');
+
+        dx.onblur = function() {
+            if (amg.test(this.value)) {
+                dv.innerHTML = '1';
+                dv.style.color = 'pink';
+            } else {
+                dv.innerHTML = '2';
+                dv.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+
+</html>

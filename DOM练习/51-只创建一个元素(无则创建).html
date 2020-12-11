@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      background-color: pink;
+    }
+  </style>
+
+</head>
+<body>
+
+<input type="button" value="点击按钮创建" id="btn">
+
+<div id="dv"></div>
+
+
+<script>
+  document.getElementById('btn').onclick = function () {
+    // 当按这个按钮时 判断div中这个按钮的子元素有没有，没有就创建，有就不管(不执行代码)
+    if (!document.getElementById('1')) {//判断有没有，没有就创建
+      var x = document.createElement('input');
+      x.type = 'button';
+      x.value = '我是被创建出来的按钮';
+      x.id = '1';
+      document.getElementById('dv').appendChild(x);
+    }
+
+  };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: #3B475F;
+      position: absolute;
+
+      left: 100px;
+    }
+    input{
+      margin-top: 130px;
+    }
+  </style>
+
+</head>
+<body>
+<div id="dv"></div>
+<input type="button" value="按钮" id="btn">
+
+<script>
+  document.getElementById('btn').onclick=function () {
+    var json1={'width':600,'height':600,'left':600,'top':'100'};
+    f1(document.getElementById('dv'),json1,function () {
+      var json2={'width':100,'height':100,'left':800,'top':800};
+      f1(document.getElementById('dv'),json2)
+    });
+  };
+
+//  获取元素任意值的兼容代码
+  function getStyle(element,attr) {
+    return window.getComputedStyle?window.getComputedStyle(element,null)[attr]:element.currentStyle[attr];
+  }
+
+  //缓动函数,实现获取多个属性值
+
+
+//同时获取一个元素的多个属性值
+  function f1(element,json,fn) {
+    clearInterval(element.test);
+    element.test=setInterval(function () {
+      var flag=true;//默认假设，全部到达目的
+      for(var attr in json){
+        //获取元素属性当前的值
+        var dangqian=parseInt(getStyle(element,attr));//此处一定要从字符串转换为整数
+        //当前元素对应的目标值
+        var mubiao=json[attr];
+        //移动的步数
+        var step=(mubiao-dangqian)/10;
+        step=step>0?Math.ceil(step):Math.floor(step);
+        dangqian+=step;//移动后的值
+        element.style[attr]=dangqian+'px';
+        if(dangqian != mubiao){
+          flag=false;
+        }
+      }
+      if (flag){
+        //清理定时器
+        clearInterval(element.test);
+        if(fn){
+          fn();
+        }
+      }
+    },20);
+  }
+
+</script>
+</body>
+</html>

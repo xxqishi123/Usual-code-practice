@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+    /*把没有点击过（未访问）的连接选择出来*/
+    a:link {
+      color: #dad55e;
+      text-decoration: none;
+      /*去下划线*/
+    }
+
+    /*把已近点击过（访问过）的连接选择出来*/
+    a:visited {
+      color: red;
+    }
+
+    /*鼠标经过那个连接就显示出来*/
+    a:hover {
+      color: #7bff3d;
+    }
+
+    /*鼠标正在按下,但还没有弹起来的连接*/
+    a:active {
+      color: #dad55e;
+    }
+  </style>
+</head>
+<body>
+<!--伪类选择器最大的特点就是用冒号（：）表示-->
+
+<a href="">我是一个标签</a>
+注意事项:1.要按照上面的顺序严格数写link,visited,hover,active(lvha)
+        2.a连接在浏览器中具有默认样式,在实际工作中需要给连接单独指定样式
+</body>
+</html>

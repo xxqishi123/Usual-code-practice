@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+    textarea {
+      width: 300px;
+      height: 100px;
+      background-color: #6ad1ff;
+      font-size: 30px;
+    }
+
+  </style>
+
+</head>
+<body>
+
+<!--<textarea id="text">签订契约成为会员吧</textarea>-->
+<!--<input type="button" value="请仔细阅读该协议（6）" id="btn" disabled="disabled">-->
+
+<!--<script>-->
+<!--document.getElementById('text').onfocus = function () {-->
+<!--this.value = '';-->
+<!--};-->
+
+<!--document.getElementById('text').onblur = function () {-->
+<!--this.value = '签订契约成为会员吧';-->
+<!--this.style.color = 'gray';-->
+<!--};-->
+
+
+<!--var x = 6;-->
+<!--var y = setInterval(function () {-->
+<!--x&#45;&#45;;-->
+<!--document.getElementById('btn').value = "请仔细阅读该协议（" + x + "）";-->
+<!--if (x <= 0) {-->
+<!--clearInterval(y);-->
+<!--document.getElementById('btn').disabled = false;-->
+<!--document.getElementById('btn').value = '签订契约';-->
+<!--}-->
+<!--}, 1000)-->
+<!--</script>-->
+
+
+<textarea id="text">签订契约成为会员吧</textarea>
+<input type="button" value="请仔细阅读该协议（6）" id="btn" disabled="disabled">
+<script>
+  document.getElementById('text').onfocus = function () {
+    this.value = "";
+  };
+
+
+  document.getElementById('text').onblur = function () {
+    this.value = "签订契约成为会员吧";
+  };
+
+  var x = 6;
+
+  function f1() {
+    x--;
+    if (x >= 0) {
+      document.getElementById('btn').value = "请仔细阅读该协议（" + x + "）";
+    } else {
+      document.getElementById('btn').value = '签订契约';
+      document.getElementById('btn').disabled = "";
+      clearInterval(text);
+    }
+  }
+
+  f1();
+  var text = setInterval(f1, 300)
+</script>
+
+
+</body>
+</html>

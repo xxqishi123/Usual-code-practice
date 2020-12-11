@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .dv {
+      width: 747px;
+      height: 617px;
+      background: url("../img/map.png") gray no-repeat;
+      position: relative;
+    }
+
+    .city {
+      width: 8px;
+      height: 8px;
+      background-color: skyblue;
+      top: 227px;
+      left: 548px;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .tb2{
+      top: 499px;
+      left: 660px;
+    }
+
+    .tb3{
+      top: 543px;
+      left: 550px;
+    }
+
+
+    .city .btn{
+      width: 8px;
+      height: 8px;
+      box-shadow: 0 0 12px skyblue;
+      border-radius: 50%;
+      position: absolute;
+
+      /*居中算法*/
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+
+      transition: all .3s;
+      animation: move .6s infinite;
+    }
+
+    .city .dv3{
+    animation-delay: .3s;
+    }
+
+    .city .dv4{
+      animation-delay: .6s;
+    }
+
+
+
+    @keyframes move {
+      0%{}
+
+      70%{
+        width: 50px;
+        height: 50px;
+        opacity: 1;
+      }
+
+      100%{
+        width: 80px;
+        height: 80px;
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="dv">
+  <div class="city">
+    <div class="dv2 btn"></div>
+    <div class="dv3 btn"></div>
+    <div class="dv4 btn"></div>
+  </div>
+
+  <div class="city tb2">
+    <div class="dv2 btn"></div>
+    <div class="dv3 btn"></div>
+    <div class="dv4 btn"></div>
+  </div>
+
+  <div class="city tb3">
+    <div class="dv2 btn"></div>
+    <div class="dv3 btn"></div>
+    <div class="dv4 btn"></div>
+  </div>
+</div>
+</body>
+</html>

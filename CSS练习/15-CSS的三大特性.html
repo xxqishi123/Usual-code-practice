@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+CSS三大特性：层叠性，继承性，优先级
+
+层叠性：给一个标签多个重复的样式，就近原则，上面的会被覆盖掉
+
+继承性：子级可以继承父级的样式
+注意：继承的权重为0，如果该元素没有直接选中，不管父元素权重多高，子元素得到的权重都是0
+
+优先级：选择器相同，就近原则；选择器不同，根据选择器权重执行
+
+继承和*（通配符）（0，0，0，0）<元素选择器 （0，0，0，1）
+<类选择器和伪类选择器 （0，0，1，0）<id选择器 （0，1，0，0）<行内样式 （1，0，0，0）<！important(无穷大)
+
+注意：复合选择器权重会有叠加现象
+
+<style>
+  .test {
+    color: red;
+  }
+
+  div {
+    color: pink !important;
+    !important;
+  }
+</style>
+
+<div class="test" style="color: black">asdhhhhhhhhhhhhhhh</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="password" value="" id="a">
+
+<script src="JS.js"></script>
+
+<script>
+  //只需要失去焦点事件
+  id$('a').onblur=function () {
+//    value值在3-6之间背景颜色显示pink，不在这个范围显示 #0fffd7
+    if (this.value.length>=3&&this.value.length<=6){
+      this.style.backgroundColor='pink';
+    }else {
+      this.style.backgroundColor=' #0fffd7';
+    }
+  };
+</script>
+</body>
+</html>

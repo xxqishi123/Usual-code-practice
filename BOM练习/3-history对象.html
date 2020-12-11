@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <!--有俩个页面：本页面和另外一个页面（test-history），本页面有俩个按键，跳转和前进。
+    另外一个页面（test-history）有一个按键，后退。实现联动-->
+
+    <input type="button" value="跳转" id="btn1">
+    <input type="button" value="前进" id="btn2">
+
+    <script>
+        //  跳转
+        document.getElementById('btn1').onclick = function() {
+            location.href = 'test-history.html';
+        };
+
+
+        //  前进
+        document.getElementById('btn2').onclick = function() {
+            history.forward();
+        };
+
+        //  总结：刚开始点前进按钮是没有反应的，应为没有历史记录，所以前进不了，点完跳转再点前进就有反应了，应为有历史记录
+    </script>
+
+</body>
+
+</html>

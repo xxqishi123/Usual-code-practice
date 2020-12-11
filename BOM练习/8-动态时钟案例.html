@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<img src="" alt="" id="im">
+
+<script>
+  setInterval(function () {
+    var dt = new Date();//获取当前时间
+    var hour = dt.getHours();//获取小时
+    var minute = dt.getMinutes();//获取分钟
+    var second = dt.getSeconds();//获取秒钟
+
+//    下面三个判断是在0-9前面加一个0
+    hour = hour < 10 ? "0" + hour : hour;
+    minute = minute < 10 ? '0' + minute : minute;
+//    second = second < 10 ? '0' + second : second;
+
+    document.getElementById('im').src = '../img/' + second + '.jpg';
+  }, 1000)
+</script>
+
+</body>
+</html>

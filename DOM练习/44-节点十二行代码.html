@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div">
+  <span>span标签</span>
+  <p>p标签</p>
+  <ul id="ul">
+    <li>1</li>
+    <li>2</li>
+    <li id="li">3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+</div>
+
+<script>
+  var ul=document.getElementById('ul');
+
+  //ul父节点
+  console.log(ul.parentNode);
+
+  //ul父元素
+  console.log(ul.parentElement);
+
+  //ul子节点
+  console.log(ul.childNodes);
+
+  //ul子元素
+  console.log(ul.children);
+
+  //ul第一个子节点
+  console.log(ul.firstChild);
+
+  //ul第一个子元素
+  console.log(ul.firstElementChild);
+
+  //ul最后一个子节点
+  console.log(ul.lastChild);
+
+  //ul最后一个子元素
+  console.log(ul.lastElementChild);
+
+  //ul前一个兄弟节点
+  console.log(ul.previousSibling);
+
+  //ul前一个兄弟元素
+  console.log(ul.previousElementSibling);
+
+  //ul最后一个兄弟节点
+  console.log(ul.nextSibling);
+
+  //ul最后一个兄弟元素
+  console.log(ul.nextElementSibling);
+
+
+</script>
+</body>
+</html>

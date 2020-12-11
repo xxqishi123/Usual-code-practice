@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div style="background-color: pink ;width: 100px;height: 10000px"></div>
+
+<script>
+//  function f1() {
+//        向上卷曲的距离
+//    var top=window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop ||0;
+//        向左卷曲的距离
+//    var left=window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft ||0;
+//
+//    return [top,left];
+//  }
+
+//                 往下推理
+
+//
+//function f1() {
+//    var test={}
+//  test.top=window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop ||0;
+//
+//  test.left=window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft ||0;
+//
+//  return test;
+//}
+
+//                往下推理
+
+//
+//function f1() {
+//  var test={
+//    top:window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop ||0,
+//
+//    left:window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft ||0
+//  }
+//
+//  return test;
+//}
+
+
+//                 往下推理
+
+function f1() {
+  return{
+    top:window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop ||0,
+
+    left:window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft ||0
+  };
+}
+
+window.onscroll=function () {
+  console.log(f1().top);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    p {
+      /*改变字体*/
+      font-family: "Microsoft YaHei UI";
+
+      /*字体大小*/
+      font-size: 100px;
+
+      /*字体粗细:normal（默认值）  bold（加粗）  也可以用具体数字*/
+      font-weight: normal;
+      font-weight: bold;
+
+      /*行高*/
+      line-height: 2px;
+
+      /*字体样式  :normal（默认值）  italic（斜体）*/
+      font-style: normal;
+      font-style: italic;
+
+      /*文本对齐的三个方式*/
+      text-align: center;
+      text-align: left;
+      text-align: right;
+
+      /*文本装饰*/
+      text-decoration: underline;   下划线
+      text-decoration: none;        默认
+      text-decoration: overline;    上划线
+      text-decoration: line-through; 删除线
+
+    /*文本缩进*/
+      text-indent：10px;
+    }
+
+    div {
+      /*字体属性的复合写法*/
+      font-style: italic;
+      font-weight: 300;
+      font-size: 16px;
+      font-family: "Microsoft YaHei";
+    }
+
+    span {
+      /*字体近一步复合写法*/
+      font: italic 300 16px Microsoft YaHei;字体样式，粗细，大小，字体
+    }
+  </style>
+</head>
+<body>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<div>5</div>
+<span>6</span>
+</body>
+</html>

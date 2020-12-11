@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--点击按钮修改A标签的地址和热点文字-->
+<input type="button" value="点击修改A标签" id="8">
+<a href="www.baidu" id="9">百度</a>
+
+
+<script>
+  document.getElementById('8').onclick=function () {
+
+    var z=document.getElementById('9');
+    z.innerText='谷歌';
+    z.href='www.guge';
+//    document.getElementById('9').innerText='谷歌';
+//    document.getElementById('9').href='www.guge';
+  }
+</script>
+
+
+</body>
+</html>
+
+

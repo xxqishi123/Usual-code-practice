@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  div {
+    height: 300px;
+    width: 300px;
+    background-color: lightpink;
+  }
+</style>
+<body>
+<input type="button" value="第一种方法创建元素" id="1">
+<script>
+  document.getElementById('1').onclick = function () {
+    document.write('<p>这是一个P标签</p>');
+  };
+  //缺点：创建新元素时会把自己给牺牲掉
+</script>
+
+
+<input type="button" value="第二种方法创建元素" id="2">
+<div id="dv"></div>
+<script>
+  document.getElementById('2').onclick = function () {
+    document.getElementById('dv').innerHTML = '<p>这是一个P标签</p>>';
+  };
+</script>
+
+
+<input type="button" value="第二种方法创建元素（比上面的灵活，没有写死）" id="3">
+<div id="div"></div>
+<script>
+  var arr = ['1', '2', '3', '4', '5', '6'];
+  document.getElementById('3').onclick = function () {
+    var str = '<ul>';
+    for (var x = 0; x < arr.length; x++) {
+      str += '<li>' + arr[x] + '</li>';
+    }
+    str += '</ul>';
+    document.getElementById('div').innerHTML = str;
+
+    //拓展：添加鼠标进入/离开事件改变列表颜色
+    var i = document.getElementById('div').getElementsByTagName('li');
+    for (var j = 0; j < i.length; j++) {
+      i[j].onmouseover = function () {
+        this.style.backgroundColor = 'black';
+      };
+      i[j].onmouseout = function () {
+        this.style.backgroundColor = '';
+      };
+    }
+  };
+</script>
+
+
+<input type="button" value="第三种创建对象的方法" id="4">
+<div id="di"></div>
+<script>
+  document.getElementById('4').onclick = function () {
+//    createElement返回的是对象
+    var x = document.createElement('p');
+    x.innerHTML = 'ppp';
+//    x.innerText='ppp';
+    document.getElementById('di').appendChild(x);
+  };
+</script>
+
+
+<input type="button" value="第三种创建对象方法（改进版用ul和li）" id="5">
+<div id="divs"></div>
+<script>
+  var arrs = [1, 2, 3, 4, 5, 6];
+  document.getElementById('5').onclick = function () {
+    //    创建ul，并把ul加入父级元素div中
+    var ulobj = document.createElement('ul');
+    document.getElementById('divs').appendChild(ulobj);
+
+    for (var y = 0; y < arrs.length; y++) {
+      var liobj = document.createElement('li');
+      liobj.innerHTML = arrs[y];
+      ulobj.appendChild(liobj);
+
+      //拓展；添加鼠标进入/进出事件(函数)
+      liobj.onmouseout = onmouseoutMark;
+      liobj.onmouseover = onmouseoverMark;
+    }
+  };
+
+  //鼠标进入/离开（主函数）
+  function onmouseoutMark() {
+    this.style.backgroundColor = '';
+  }
+
+  function onmouseoverMark() {
+    this.style.backgroundColor = 'black';
+  }
+</script>
+
+
+
+</body>
+</html>

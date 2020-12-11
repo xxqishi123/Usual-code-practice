@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        function f1() {}
+
+        // 用class创建一个类 {}
+        class Str {
+            constructor(username, age) {
+                    this.username = username;
+                    this.age = age;
+                }
+                // 想要添加其他方法,在class类中添加即可
+            sing(changge) {
+                console.log(this.username + changge);
+            }
+        }
+
+        // 利用class类new一个对象
+        var ldh = new Str("ldh", 20);
+        var zxy = new Str('zxy', 22);
+        // console.log(ldh);
+        // console.log(zxy);
+
+        // 调用calss类中的sing方法
+        ldh.sing('555');
+        zxy.sing('555555')
+    </script> -->
+    <!-- 
+    <script>
+        // 用class创建类
+        class Father {
+            constructor() {
+
+            }
+
+            money() {
+                console.log(600);
+            }
+        }
+
+        // 继承
+        class Son extends Father {}
+        // new实例化
+        var erzi = new Son();
+        // 调用
+        erzi.money();
+    </script> -->
+
+    <!-- super关键字 -->
+    <!-- 这里调用了父类的构造函数 -->
+    <!-- <script>
+        class Father {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            sum(x, y) {
+                console.log(this.x + this.y);
+            }
+        }
+
+        class Son extends Father {
+            constructor(x, y) {
+                super(x, y);
+            }
+        }
+
+        var erzi = new Son(33, 3);
+        erzi.sum();
+    </script> -->
+
+    <!-- super关键字 -->
+    <!-- 这里调用父类的普通函数 -->
+    <!-- <script>
+        class Father {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            sum() {
+                console.log(this.x + this.y);
+            }
+        }
+
+        class Son extends Father {
+            constructor(x, y) {
+                super(x, y);
+                this.x = x;
+                this.y = y;
+            }
+            sub() {
+                console.log(this.x - this.y);
+            }
+        }
+
+        var erzi = new Son(6, 3);
+        erzi.sub();
+        erzi.sum();
+    </script> -->
+
+
+
+    <!-- //利用构造函数创建对象 -->
+    <!-- <script>
+        // 构造函数中的属性和方法我们称之为成员， 成员可以添加
+        function Star(username, age) {
+            this.username = username;
+            this.age = age;
+
+            this.sing = function() {
+                console.log('chuang ge');
+            }
+        }
+
+        var ldh = new Star('ldh', 18);
+        // 实例成员就是构造函数内部通过this添加的成员 比如： uesrname， age， sing；他们都是通过this来添加的
+        // 实例成员只能通过实例化的对象来访问 这里的new Star（）；就是实例化的意思，实例化并赋值给ldh
+        console.log(ldh); //这里是通过实例化对象来访问的
+        ldh.sing(); //这里是通过实例化对象来访问的
+
+        console.log(Star.username); //这里是通过构造函数来访问的，不行，不能通过构造函数来访问实例成员
+
+
+
+        // 静态成员：在构造函数本身添加的成员
+        // 不是通过构造函数内部this添加的，而是直接在构造函数本身添加的
+        Star.sex = '男';
+
+        //静态成员只能通过构造函数来访问的,不能通过对象来访问
+        console.log(Star.sex);
+    </script> -->
+
+    <!-- <script>
+        function Stat(username, age) {
+            this.username = username;
+            this.age = age;
+            // this.sing = function() {
+            //     console.log('chang ge');
+            // }
+        }
+        // 语法：构造函数的原型对象里面在追加方法
+        // 语法：Stat.prototype.sing = function() {}
+        Stat.prototype.sing = function() {
+            console.log('chang ge');
+        }
+        var ldh = new Stat();
+        var zxy = new Stat();
+        console.log(ldh.sing == zxy.sing);
+    </script> -->
+    <!-- 
+    <script>
+        function Star(username, age) {
+            this.username = username;
+            this.age = age;
+
+            // 在这里定义的方法是实例对象上面的
+            this.sing = function() {
+                console.log('changge');
+            }
+        }
+
+        //在这里定义的方法是Star原型对象上面的
+        Star.prototype.sing = function() {
+            console.log('chang ge');
+        }
+
+        //在这里定义的方法是Object原型对象上面的
+        Object.prototype.sing = function() {
+            console.log('wyaochangge');
+        }
+
+        var ldh = new Star('ldhs', 18);
+        var zxy = new Star('zxys', 20);
+
+        ldh.sing();
+    </script> -->
+    <!-- 
+    <script>
+        //借用父构造函数继承属性
+        //1.父构造函数
+        function Father(username, age) {
+            //this指向父构造函数的实例对象
+            this.username = username;
+            this.age = age;
+        }
+
+        //父构造函数原型上面的方法
+        Father.prototype.money = function() {
+            console.log(100);
+        }
+
+        //子构造函数原型上面的方法
+        Son.prototype.extem = function() {
+            console.log(300);
+        }
+
+
+        Son.prototype = new Father();
+
+        //2.子构造函数
+        function Son(name, ages) {
+            //this指向子构造函数的实例对象
+            //把父构造函数里面的this指向子构造函数
+            Father.call(this, name, ages);
+        }
+
+        var dv = new Son('yyb', 23);
+        console.log(dv);
+    </script> -->
+
+    <!-- <script>
+        // filter迭代遍历数组
+        var arr = [20, 30, 40, 55, 60]
+
+        var newArr = arr.filter((value, index, element) => {
+            return value > 30 && value % 2 === 0;
+        });
+        console.log(newArr);
+    </script> -->
+    <!-- 
+    <script>
+        //some迭代遍历数组
+        var arr = [1, 10, 2, 20, 3, 30]
+
+        var newArr = arr.some((value, index, element) => {
+            return value >= 30;
+        })
+        console.log(newArr);
+    </script> -->
+    <!-- 
+    <script>
+        var numberArr = [1, 2, 3, 4, 5, 6, 7];
+        var res = numberArr.map(function(item, index, array) {
+            return item > 2
+        });
+        console.log(res);
+    </script> -->
+
+    <script>
+        //filter过滤器，循环遍历数组的每一项，符合筛选条件的就会建立一个新的数组并把结果放进去，不会更改原数组。
+        var arr = [1, 2, 3, 4, 5, 6]
+
+        var newArr = arr.filter(value =>
+            value > 3
+        )
+
+        console.log(newArr);
+    </script>
+</body>
+
+</html>

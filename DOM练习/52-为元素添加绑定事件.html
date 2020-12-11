@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="1">
+<script>
+//  为元素添加绑定事件（DOM）：有俩种方法
+
+//    addEventListener(参数1，参数2，参数3)
+//  参数1：事件的类型---事件的名字（没有on，例如click）,且必须是字符串
+//  参数2：事件处理函数---函数（命名函数，匿名函数）
+//  参数3：布尔类型：本节就写false
+
+  document.addEventListener('click', function () {
+    console.log('111');
+  }, false);
+
+
+  document.addEventListener('click', function () {
+    console.log('222');
+  }, false);
+
+
+  document.addEventListener('click', function () {
+    console.log('333');
+  }, false);
+//
+//  上面的方法谷歌和火狐支持，IE8不支持
+//
+//
+//
+//          attachEvent(参数1，参数2)；
+//    参数1：事件类型---事件名字，有on(字符串)
+//    参数2；事件处理函数---函数（命名函数，匿名函数）
+
+
+  document.getElementById('2').attachEvent('onclick', function () {
+    console.log('111');
+  })
+  //此方法谷歌和火狐不支持，ie8支持
+</script>
+</body>
+</html>

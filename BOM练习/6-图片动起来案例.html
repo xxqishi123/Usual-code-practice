@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        img {
+            width: 300px;
+            height: 200px;
+        }
+        
+        div {
+            position: absolute;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <input type="button" value="点击按钮让图片动起来" id="btn">
+    <input type="button" value="点击按钮让图片停止动起来" id="btn2">
+
+    <div id="dv">
+        <img src="../img/3.jpg" alt="">
+    </div>
+
+    <script>
+        //注意：在此处加的变量是全局变量，如果在函数里面加那就变成局部变量，外面接受不到，定时器停止需要接受函数，所以要在函数外面定义一个全局变量
+        //  var i;
+        //  document.getElementById('btn').onclick = function () {
+        //
+        //    i = setInterval(function () {
+        //      var x = parseInt(Math.random() * 100 + 1);
+        //      var y = parseInt(Math.random() * 100 + 1);
+        //
+        //      document.getElementById('dv').style.left = x + 'px';
+        //      document.getElementById('dv').style.top = y + 'px';
+        //    }, 100);
+        //  };
+        //
+        //  document.getElementById('btn2').onclick = function () {
+        //    window.clearInterval(i);
+        //  };
+        //
+
+
+
+        //  改进版
+        function f1() {
+            var x = parseInt(Math.random() * 100 + 1);
+            var y = parseInt(Math.random() * 100 + 1);
+
+            document.getElementById('dv').style.left = x + 'px';
+            document.getElementById('dv').style.top = y + 'px';
+        }
+
+        document.getElementById('btn').onclick = function() {
+            f1();
+            clearInterval(document.getElementById('btn').text);
+            document.getElementById('btn').text = setInterval(f1, 100);
+        };
+
+        document.getElementById('btn2').onclick = function() {
+            window.clearInterval(document.getElementById('btn').text);
+        };
+
+
+
+        document.getElementById('btn').onclick = function() {
+
+        };
+    </script>
+
+
+</body>
+
+</html>

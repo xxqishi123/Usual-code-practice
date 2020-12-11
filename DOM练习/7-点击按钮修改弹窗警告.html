@@ -1,0 +1,45 @@
+、<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--点击按钮修改弹窗警告的值-->
+<!--onclick是响应事件，不能直接写答案，必须要跟一个弹框警告（alert）；-->
+<!--html js 没有分离-->
+<input type="button" value="1" onclick="alert('xiao')">
+<input type="button" value="2" id="1">
+<script>
+  document.getElementById(1).onclick=function () { alert('xiaoxiao') }
+</script>
+
+<!--如果函数重名的话会被覆盖-->
+<input type="button" value="3" onclick="f1()">
+<script>
+  function f1() {
+    alert('xiaoxiao')
+  }
+</script>
+
+
+<input type="button" value="4" id="2">
+<script>
+  function f2() {
+    alert('xiaoxiao')
+  }
+  var obj=document.getElementById('2');
+  obj.onclick=f2;
+</script>
+
+<input type="button" value="5" id="3">
+<script>
+  var obj1=document.getElementById('3');
+  obj1.onclick=function () {
+    alert('xiaoxiao')
+  }
+</script>
+<!--点击按钮修改弹窗警告的值-->
+
+</body>
+</html>

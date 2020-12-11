@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .father {
+      width: 300px;
+      height: 300px;
+      background-color: skyblue;
+
+      /*父元素，相对定位*/
+      position: relative;
+    }
+
+    .son {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+
+      /*子元素，绝对定位*/
+      position: absolute;
+      top: 10px;
+      left: 10px;
+
+    }
+  </style>
+</head>
+<body>
+绝对定位：以自我为定位，不脱表，当爹    position: relative;
+相对定位：先找定位，父级无定位以浏览器为定位，找爹   position: absolute;
+子绝父相：子级绝对定位，父级相对定位
+<div class="father">
+  <div class="son"></div>
+</div>
+</body>
+</html>

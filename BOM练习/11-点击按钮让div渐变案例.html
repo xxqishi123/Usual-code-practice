@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+    div {
+      width: 300px;
+      height: 200px;
+      background-color: red;
+    }
+  </style>
+
+</head>
+<body>
+<!--透明度（opacity）：0.0——1（透明度从左往右变化）-->
+
+<div id="dv"></div>
+
+<input type="button" value="渐变" id="btn">
+
+<!--<script>-->
+<!--document.getElementById('btn').onclick = function () {-->
+<!--var opacity = 10;-->
+<!--var x = setInterval(function () {-->
+<!--opacity&#45;&#45;;-->
+
+<!--if (opacity <= 0) {-->
+<!--clearInterval(x);-->
+<!--}-->
+
+<!--document.getElementById('dv').style.opacity = opacity / 10;-->
+<!--}, 200);-->
+<!--};-->
+<!--</script>-->
+
+<script>
+  document.getElementById('btn').onclick=function () {
+    var opacity=10;
+    var text=setInterval(function () {
+      opacity--;
+      document.getElementById('dv').style.opacity=opacity/10;
+
+      if(opacity<=0){
+        clearInterval(text);
+      }
+    },300);
+  };
+</script>
+
+</body>
+</html>

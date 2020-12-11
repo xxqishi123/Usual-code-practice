@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    div{
+      height: 300px;
+      width: 300px;
+      background-color: #4677ff;
+    }
+  </style>
+</head>
+<body>
+<div id="a"></div>
+<input type="button" value="点击按钮给div添加文字" id="b">
+
+<script>
+//  设置标签中文本内容，应该使用textContent属性，谷歌和火狐支持，但IE8不支持；
+//  设置标签中文本内容，应该使用innerText属性，谷歌，IE8都支持，低版本火狐不支持
+
+//如果这个属性在浏览器中不支持，那么这个属性的类型会是undefined
+
+//所以要写兼容代码
+
+  document.getElementById('b').onclick=function () {
+    document.getElementById('a').innerText='我被改变了';
+    document.getElementById('a').textContent='我被改变了';
+  };
+</script>
+</body>
+</html>

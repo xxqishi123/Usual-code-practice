@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跑马灯案例</title>
+</head>
+
+<body>
+    <script src="../VUE/vue.js"></script>
+
+    <div id="btn">
+        <input type="button" value="按钮1" @click="kaiamg">
+        <input type="button" value="按钮2" @click="stop">
+        <p>{{amg}}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#btn',
+            data: {
+                amg: '123456789',
+                endamg: null
+            },
+            methods: {
+                kaiamg() {
+                    if (this.endamg != null) return;
+                    this.endamg = setInterval(() => {
+                        var start = this.amg.substring(0, 1);
+                        var end = this.amg.substring(1);
+                        this.amg = end + start;
+                    }, 100);
+                },
+                stop() {
+                    clearInterval(this.endamg);
+                    this.endamg = null;
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

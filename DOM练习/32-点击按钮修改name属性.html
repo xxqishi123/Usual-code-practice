@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点击按钮改变" id="1"><br>
+<input type="text" value="111111" name="2"><br>
+<input type="text" value="111111" name="1"><br>
+<input type="text" value="111111" name="2"><br>
+<input type="text" value="111111" name="1"><br>
+<input type="text" value="111111" name="2"><br>
+<input type="text" value="111111" name="1"><br>
+
+<script src="JS.js"></script>
+
+<script>
+  id$('1').onclick=function () {
+    var i=document.getElementsByName('1');
+    for (var j=0;j<i.length;j++){
+      i[j].value='222222';
+    }
+  };
+</script>
+</body>
+</html>

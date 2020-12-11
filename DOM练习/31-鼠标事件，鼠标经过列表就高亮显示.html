@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--<ul>-->
+<!--<li>1</li>-->
+<!--<li>2</li>-->
+<!--<li>3</li>-->
+<!--<li>4</li>-->
+<!--<li>5</li>-->
+<!--<li>6</li>-->
+<!--</ul>-->
+
+<!--<script>-->
+<!--//  鼠标进入和离开事件-->
+
+<!--//  第一步先获取所有的li标签-->
+<!--var i = document.getElementsByTagName('li');-->
+
+<!--//  for循环遍历-->
+<!--for (var j = 0; j < i.length; j++) {-->
+<!--//    为鼠标注册进入事件-->
+<!--i[j].onmouseover = function () {-->
+<!--this.style.backgroundColor = 'pink';-->
+<!--};-->
+<!--//    为鼠标注册离开事件-->
+<!--i[j].onmouseout = function () {-->
+<!--this.style.backgroundColor = '';-->
+<!--};-->
+<!--}-->
+<!--</script>-->
+
+<ul>
+
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+</ul>
+
+<script>
+  var x = document.getElementsByTagName('li');
+  for (var y = 0; y < x.length; y++) {
+    x[y].onmouseover = function () {
+      this.style.backgroundColor = 'yellow';
+    };
+    x[y].onmouseout = function () {
+      this.style.backgroundColor = '';
+    };
+  }
+</script>
+
+
+</body>
+</html>

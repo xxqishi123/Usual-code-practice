@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--写法一-->
+<a href="http://www.bai.du.com" onclick="alert('确定跳转吗');return false">百度1</a>
+
+<!--写法二-->
+<a href="http://www.bai.du.com" onclick="return f1()">百度2</a>
+<script>
+  function f1() {
+    alert('确定跳转吗？');
+    return false;
+  }
+</script>
+
+<!--写法三-->
+<a href="http://www.bai.du.com" id="1">百度3</a>
+<script>
+  document.getElementById('1').onclick=function () {
+    alert('确定跳转吗？');
+    return false;
+  };
+</script>
+</body>
+</html>

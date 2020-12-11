@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<ul id="ul">
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+</ul>
+<!--节点个数：13-->
+<!--节点元素：6-->
+<input type="button" value="隔行变色" id="1">
+
+<script>
+  //获取input标签的id值，并创建点击事件
+  document.getElementById('1').onclick = function () {
+//累加器，计算节点元素
+    var count = 0;
+//获取ul所有的孩子节点
+    var ulNode = document.getElementById('ul').childNodes;
+//循环遍历孩子节点
+    for (var x = 0; x < ulNode.length; x++) {
+//判断；是不是标签节点，标签节点名字是不是LI
+      if (ulNode[x].nodeType == '1' && ulNode[x].nodeName == 'LI') {
+
+        ulNode[x].style.backgroundColor = count % 2 != 0 ? 'pink' : 'hotpink';
+        count++;
+      }
+    }
+  };
+</script>
+
+
+</body>
+</html>

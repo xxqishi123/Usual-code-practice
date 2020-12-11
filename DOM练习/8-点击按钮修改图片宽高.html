@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--点击按钮修改图片属性-->
+<input type="button" value="显示图片" id="4">
+<img src="../img/1.jpg" alt="" id="5">
+<script>
+  document.getElementById('4').onclick = function () {
+    var y = document.getElementById('5');
+
+    y.height = 60;
+    y.width = 60;
+  };
+</script>
+
+</body>
+</html>

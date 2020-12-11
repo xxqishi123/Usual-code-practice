@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    div{
+      width: 200px;
+      height: 150px;
+      background-color: #0fffd7;
+      float: left;
+      margin-left: 10px;
+      border:2px solid #0fffd7;
+    }
+  </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+<script>
+//  获取所有的div
+  var i=document.getElementsByTagName('div');
+  for (var j=0;j<i.length;j++){
+//    鼠标进入事件
+    i[j].onmouseover=function () {
+      this.style.border='2px solid black';
+    };
+//    鼠标离开事件
+    i[j].onmouseout=function () {
+      this.style.border='';
+    };
+  }
+</script>
+</body>
+</html>

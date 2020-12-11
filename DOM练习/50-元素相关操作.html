@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      height: 300px;
+      width: 300px;
+      background-color: #0fffd7;
+    }
+  </style>
+</head>
+<body>
+<input type="button" value="元素相关操作" id="1">
+<input type="button" value="删掉第一个子元素" id="2">
+<input type="button" value="一次删掉所有的子元素" id="3">
+<div id="dv"></div>
+
+<script>
+  var i = 0;
+  document.getElementById('1').onclick = function () {
+    i++;
+
+    //创建input标签
+    var obj = document.createElement('input');
+    //给input标签赋值
+    obj.type = 'button';
+    obj.value = '按钮' + i;
+    //把创建，并赋值的标签追加到div标签里
+//    document.getElementById('dv').appendChild(obj);
+
+    //把新的子元素添插入到第一个元素前面
+    document.getElementById('dv').insertBefore(obj, document.getElementById('dv').firstElementChild);
+
+//    document.getElementById('dv').replaceChild(obj, document.getElementById('dv').firstElementChild);
+  };
+
+//  删掉第一个子元素
+  document.getElementById('2').onclick = function () {
+    document.getElementById('dv').removeChild(document.getElementById('dv').firstElementChild);
+  };
+
+//  一次删掉所有的子元素
+  document.getElementById('3').onclick = function () {
+    //while(循环终止条件){函数体}
+    while (document.getElementById('dv').firstElementChild) {
+      document.getElementById('dv').removeChild(document.getElementById('dv').firstElementChild);
+    }
+  };
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<input type="button" value="点击停止定时器" id="btn">
+
+<script>
+  //  定时器（有俩个方法，这里只介绍方法1）
+  //  参数1：函数
+  //  参数2：时间
+  //  setInterval(参数1，参数2);
+  //此函数返回值就是定时器的id值
+
+  //清理定时器
+//  clearInterval(定时器id值)
+
+//  注意:有个bug，页面全部加载完毕后，过1秒，才会执行定时器
+
+  var x = setInterval(function () {
+    alert('111');
+  }, 3000);
+
+//  解决此bug的方法,不用匿名函数
+  function f1() {
+    alert('222');
+  }
+  f1();
+  setInterval(f1, 3000);
+
+
+
+
+  document.getElementById('btn').onclick = function () {
+    //定时器停止函数
+    window.clearInterval(x);
+    clearInterval(x);
+//    上面俩个写法都可以，window可以省略不写
+  };
+</script>
+</body>
+</html>

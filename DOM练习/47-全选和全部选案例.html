@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    table thead {
+      background-color: #0fffd7;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <table border="1" cellspacing="0">
+    <thead>
+    <tr>
+      <th><input type="checkbox" id="thead">姓名</th>
+      <th>性别</th>
+      <th>年龄</th>
+    </tr>
+    </thead>
+
+    <tbody id="tbody">
+    <tr>
+      <td><input type="checkbox">1</td>
+      <td>男</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox">2</td>
+      <td>女</td>
+      <td>18</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  //获取全选复选框的id值
+  var x = document.getElementById('thead');
+  //获取tboy里面所有小复选框
+  var y = document.getElementById('tbody').getElementsByTagName('input');
+  //注册点击事件
+  x.onclick = function () {
+    for (var z = 0; z < y.length; z++) {
+      y[z].checked = this.checked;
+    }
+  };
+</script>
+</body>
+</html>

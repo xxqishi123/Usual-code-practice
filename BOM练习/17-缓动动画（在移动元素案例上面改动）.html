@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+<div style="background-color: #0fffd7;width: 100px;height: 100px;position: absolute" id="dv"></div>
+
+<form action="">
+  <input type="button" value="400" id="btn" style="margin-top: 100px">
+  <input type="button" value="800" id="btn2">
+</form>
+
+<script>
+  document.getElementById('btn').onclick = function () {
+    f1(document.getElementById('dv'), 400);
+  };
+
+  document.getElementById('btn2').onclick = function () {
+    f1(document.getElementById('dv'), 800);
+  };
+
+  function f1(element, mubiao) {
+    var dangqian = element.offsetLeft;
+
+    clearInterval(element.test);
+    element.test = setInterval(function () {
+
+      var bushu = (mubiao - dangqian) / 10;
+      bushu = bushu > 0 ? Math.ceil(bushu) : Math.floor(bushu);
+      dangqian += bushu;
+      element.style.left = dangqian + 'px';
+
+      if (dangqian == mubiao) {
+        element.style.left = mubiao + 'px';
+        clearInterval(element.test);
+      }
+    }, 20);
+  }
+</script>
+
+</body>
+</html>

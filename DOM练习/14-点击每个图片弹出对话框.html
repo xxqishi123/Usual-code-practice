@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  img {
+    height: 300px;
+    width: 300px;
+  }
+</style>
+<body>
+<img src="../img/3.jpg" alt="">
+<img src="../img/4.jpg" alt="">
+<script>
+  var x = document.getElementsByTagName('img');
+  for (var i = 0; i <= x.length; i++) {
+    x[i].onclick = function () {
+      alert('哈哈');
+    }
+  }
+</script>
+
+</body>
+</html>

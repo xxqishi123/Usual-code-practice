@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--点击按钮修改图片alt和title的值-->
+<input type="button" value="点击图片" id="11">
+<img src="../img/1.jpg" alt="haha" title="ah ah" id="12">
+
+<script>
+  document.getElementById('11').onclick = function () {
+    var x = document.getElementsByTagName('img');
+//    getElementsByTagName返回的永远是伪数组
+    x[0].title = 'caomei';
+    x[0].alt = 'hahahaha';
+    x[0].height = 60;
+    x[0].width = 60;
+  }
+</script>
+
+<script>
+  document.getElementById('11').onclick = function () {
+    var x = document.getElementById('12');
+    x.title = '111';
+    x.alt = '222';
+    x.width = '300';
+    x.height = '300';
+  };
+</script>
+</body>
+</html>

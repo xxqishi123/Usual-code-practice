@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 300px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .cls {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<input type="button" value="隐藏" id="1">
+
+<div id="2"></div>
+
+<script src="JS.js"></script>
+
+<script>
+  id$(1).onclick = function () {
+    if (id$(2).className != 'cls') {
+      id$(2).className = 'cls';
+      this.value = '显示';
+    } else {
+      id$(2).className = '';
+      this.value = '隐藏';
+    }
+  };
+</script>
+</body>
+</html>

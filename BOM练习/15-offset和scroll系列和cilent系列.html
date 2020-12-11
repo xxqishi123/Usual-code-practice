@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    #dv1{
+      width: 300px;
+      height: 300px;
+      background-color: #6ad1ff;
+      /*父级元素*/
+      position: absolute;
+      margin-left: 100px;
+      padding-left: 100px;
+      border-left: 100px;
+    }
+
+    #dv2{
+      width: 100px;
+      height: 100px;
+      background-color: #0fffd7;
+      /*子集元素*/
+      position: absolute;
+
+    }
+
+    input{
+
+    }
+  </style>
+</head>
+<body>
+
+<div id="dv1">
+  <div id="dv2">子级</div>
+</div>
+
+<input type="button" value="父级" id="1">
+<input type="button" value="子级" id="2">
+<script>
+document.getElementById('1').onclick=function () {
+
+  console.log(document.getElementById('dv1').offsetHeight);//元素的高，有边框
+  console.log(document.getElementById('dv1').offsetWidth);//元素的宽，有边框
+  console.log(document.getElementById('dv1').offsetLeft);//(x轴)
+  console.log(document.getElementById('dv1').offsetTop);//(y轴)
+
+  console.log(document.getElementById('dv1').scrollHeight);//元素中内容的实际高（没有边框），没有内容就是元素的高
+  console.log(document.getElementById('dv1').scrollWidth);//元素中内容的实际宽（没有边框），没有内容就是元素的宽
+  console.log(document.getElementById('dv1').scrollLeft);//向左卷曲出去的距离
+  console.log(document.getElementById('dv1').scrollTop);//向上卷曲出去的距离
+};
+
+document.getElementById('2').onclick=function () {
+
+  console.log(document.getElementById('dv1').offsetHeight);//元素的高，有边框
+  console.log(document.getElementById('dv1').offsetWidth);//元素的宽，有边框
+  console.log(document.getElementById('dv1').offsetLeft);//(x轴)
+  console.log(document.getElementById('dv1').offsetTop);//(y轴)
+
+  console.log(document.getElementById('dv1').scrollHeight);//元素中内容的实际高（没有边框），没有内容就是元素的高
+  console.log(document.getElementById('dv1').scrollWidth);//元素中内容的实际宽（没有边框），没有内容就是元素的宽
+  console.log(document.getElementById('dv1').scrollLeft);//向左卷曲出去的距离
+  console.log(document.getElementById('dv1').scrollTop);//向上卷曲出去的距离
+};
+
+
+//client:可视区域
+document.getElementById('2').onclick=function () {
+  console.log(document.getElementById('dv1').clientHeight);//可视区域的高（没有边框）
+  console.log(document.getElementById('dv1').clientWidth);//可视区域的宽（没有边框）
+  console.log(document.getElementById('dv1').clientLeft);//左边框的宽度
+  console.log(document.getElementById('dv1').clientTop);//距离上面边框的宽度
+};
+
+
+</script>
+
+
+</body>
+</html>

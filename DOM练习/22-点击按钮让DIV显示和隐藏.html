@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      height: 300px;
+      width: 200px;
+      background-color: #6ad1ff;
+    }
+  </style>
+</head>
+<body>
+style是样式，display是样式中的显示，none为不显示样式，block为显示样式
+height和widht也是style里面的样式，所以引用时要加style，应为是style样式后面应当加px，其他情况不用加px。。。例：style.height='300px';
+
+<input type="button" value="显示" id="1">
+<input type="button" value="隐藏" id="3">
+<div id="2"></div>
+
+<script src="JS.js"></script>
+
+<script>
+  id$(1).onclick = function () {
+    id$(2).style.height = '200px';
+    id$(2).style.width = '300px';
+    id$(2).style.backgroundColor = 'hotpink';
+  };
+  id$(3).onclick = function () {
+    id$(2).style.display = 'none';
+  };
+</script>
+
+
+<input type="button" value="隐藏" id="1">
+
+<div id="2"></div>
+
+<script src="JS.js"></script>
+
+<script>
+  id$(1).onclick = function () {
+    if (this.value == "隐藏") {
+      id$(2).style.display = 'none';
+      this.value = "显示";
+    }
+    else if (this.value == "显示") {
+      id$(2).style.display = 'block';
+      this.value = "隐藏";
+    }
+  }
+</script>
+
+</body>
+</html>

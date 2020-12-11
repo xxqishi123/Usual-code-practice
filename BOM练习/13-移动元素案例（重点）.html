@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+
+    div {
+      width: 300px;
+      height: 200px;
+      background-color: #6ad1ff;
+      margin-top: 10px;
+      position: absolute;
+    }
+  </style>
+
+</head>
+<body>
+
+<form action="">
+  <input type="button" value="400" id="btn">
+  <input type="button" value="800" id="btn2">
+  <input type="button" value="0" id="btn3">
+</form>
+
+<div id="dv"></div>
+
+<!--当前位置；dangqian-->
+<!--目标位置：mubiao-->
+<!--每次移动的步数：bushu-->
+
+<!--<script>-->
+  <!--//  移动到400-->
+  <!--document.getElementById('btn').onclick = function () {-->
+    <!--f1(document.getElementById('dv'), 400);-->
+  <!--};-->
+
+  <!--//  移动到800-->
+  <!--document.getElementById('btn2').onclick = function () {-->
+    <!--f1(document.getElementById('dv'), 800);-->
+
+  <!--};-->
+
+  <!--//  移动到0-->
+  <!--document.getElementById('btn3').onclick = function () {-->
+    <!--f1(document.getElementById('dv'), 0);-->
+
+  <!--};-->
+
+  <!--function f1(element, mubiao) {-->
+    <!--clearInterval(element.dingshiqi);-->
+    <!--element.dingshiqi = setInterval(function () {-->
+      <!--var dangqian = element.offsetLeft;-->
+      <!--var bushu = 10;-->
+      <!--bushu = dangqian < mubiao ? bushu : -bushu;-->
+      <!--dangqian += bushu;-->
+      <!--if (Math.abs(dangqian - mubiao) >= Math.abs(bushu)) {-->
+        <!--element.style.left = dangqian + 'px';-->
+      <!--} else {-->
+        <!--element.style.left = mubiao + 'px';-->
+        <!--clearInterval(element.dingshiqi);-->
+      <!--}-->
+
+    <!--}, 20);-->
+  <!--}-->
+<!--</script>-->
+
+
+
+<script>
+  document.getElementById('btn').onclick=function () {
+    f1(document.getElementById('dv'),400);
+  };
+
+  document.getElementById('btn2').onclick=function () {
+    f1(document.getElementById('dv'),800);
+  };
+
+  document.getElementById('btn3').onclick=function () {
+    f1(document.getElementById('dv'),0);
+  };
+
+
+
+  function f1(element,mubiao) {
+    clearInterval(element.test);
+    element.test=setInterval(function () {
+      var dangqian=element.offsetLeft;
+      var bushu=10;
+      bushu=dangqian<mubiao?+bushu:-bushu;
+      dangqian+=bushu;
+      if (Math.abs(dangqian-mubiao)> Math.abs(bushu)) {
+        element.style.left = dangqian + 'px';
+      }
+      else {
+        element.style.left=mubiao+'px';
+        clearInterval(element.test);
+      }
+    },20);
+  }
+</script>
+
+</body>
+</html>

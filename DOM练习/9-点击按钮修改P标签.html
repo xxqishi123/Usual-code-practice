@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--修改P标签内容案例-->
+<input type="button" value="设置P标签的内容" id="6">
+<p id="7">Pbiaoqian</p>
+<script>
+  //  凡是成对出现的标签，中间的文本内容，设置的时候，都是用innerText这个属性的方式
+  // 根据id获取按钮，为按钮注册点击事件，添加处理函数
+  document.getElementById('6').onclick = function () {
+    document.getElementById('7').innerText = '这是P标签'
+  }
+</script>
+
+
+<input type="button" value="修改全体P标签" id="88">
+<p>xiaoxiaoqishi</p>
+<p>xiaoxiaoqishi</p>
+<p>xiaoxiaoqishi</p>
+<p>xiaoxiaoqishi</p>
+<p>xiaoxiaoqishi</p>
+<p>xiaoxiaoqishi</p>
+<script>
+  document.getElementById('88').onclick = function () {
+//    getElementsByTagName("标签的名字");返回的是伪数组
+    var x = document.getElementsByTagName('p');
+    for (var i = 0; i <= x.length; i++)
+      x[i].innerText = 'Pbiaoqian';
+  }
+</script>
+
+
+<input type="button" value="修改全体P标签2" id="89">
+<div id="90">
+  <p>xiaoxiaoqishi</p>
+  <p>xiaoxiaoqishi</p>
+  <p>xiaoxiaoqishi</p>
+  <p>xiaoxiaoqishi</p>
+  <p>xiaoxiaoqishi</p>
+  <p>xiaoxiaoqishi</p>
+</div>
+
+<div id="91">
+  <p>xxqishi</p>
+  <p>xxqishi</p>
+  <p>xxqishi</p>
+</div>
+
+<script>
+document.getElementById('89').onclick = function () {
+var x = document.getElementById('90').getElementsByTagName("p");
+for (var i = 0; i <= x.length; i++)
+x[i].innerText = 'xiugaipbiaoqian'
+}
+</script>
+
+</body>
+</html>

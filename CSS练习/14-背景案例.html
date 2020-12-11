@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>背景案例</title>
+
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+
+      /*背景颜色*/
+      background-color: pink;
+
+      /*背景图片*/
+      background-image: url("../img/3.jpg");
+
+      /*平铺*/
+      background-repeat: repeat;
+
+      /*不平铺*/
+      background-repeat: no-repeat;
+
+      /*沿X轴平铺*/
+      background-repeat: repeat-x;
+
+      /*沿Y轴平铺*/
+      background-repeat: repeat-y;
+
+      /*背景图片的位置*/
+      background-position:方位名词或者精确单位;
+      /*百分数/浮点数字和单位标识符组成的长度/top/center/bottom/left/right/等方位名词*/
+      注意：数字和方位名词可以混合使用
+
+
+
+        重点：背景图片的固定
+      backfround-attachment: scroll / fixed
+      scroll:背景图片随对象内容滚动
+      fixed:背景图片固定
+
+
+      背景的复合写法：background:背景颜色 背景图片地址 背景平铺 背景图像滚动 背景图片位置
+
+
+      背景颜色的透明度：backrtound:rgba(0,0,0,0.3)
+      最后一个代表透明度
+    }
+  </style>
+
+</head>
+<body>
+
+<div></div>
+
+</body>
+</html>

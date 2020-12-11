@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数组问题</title>
+</head>
+<body>
+<script>
+  //  1.数组求和
+  var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var sum = 0;
+  for (var y = 0; y < x.length; y++) {
+    sum += x[y];
+  }
+  console.log(sum);
+  //  2.数组求平均值
+  var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var average = 0;
+  for (var y = 0; y < x.length; y++) {
+    average += x[y] / x.length;
+  }
+  console.log(average);
+  //  3.数组求最大值
+  var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var max = 0;
+  for (var y = 0; y < x.length; y++) {
+    if (max < x[y]) {
+      max = x[y];
+    }
+  }
+  console.log(max);
+  //  4.数组求最小值
+  var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var min = x[0];
+  for (var y = 0; y < x.length; y++) {
+    if (min > x[y]) {
+      min = x[y];
+    }
+  }
+  console.log(min)
+  //  5.循环遍历数组
+  var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  for (var z = 0; z < x.length; z++) {
+    console.log(x[z]);
+  }
+  //  6.数组中的每个元素用|拼接到一起产生一个字符串输出
+  var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var str = "";
+  for (var y = 0; y < x.length; y++) {
+    str += x[y] + "|";
+  }
+  console.log(str);
+  //  7.去掉数组中重复的0
+  var x = [0, 1, 2, 0, 3, 4, 5, 6, 7, 8, 9, 10, 0];
+  var qu = [];
+  for (var y = 0; y < x.length; y++) {
+    if (x[y] != 0) {
+      qu[qu.length] = x[y];
+    }
+  }
+  console.log(qu);
+  //反转数组
+  var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  for (var y = 0; y < x.length / 2; y++) {//控制循环次数
+    var z = x[y];//吧第一个值放入中间变量
+    x[y] = x[x.length - 1 - y];//把最后一个值放入第一个位置
+    x[x.length - 1 - y] = z;//把中间变量的值放入最后一个
+  }
+  console.log(x);
+  //  冒泡排序
+  var x = [789, 45, 498, 123, 4, 48, 666, 789432, 48974561];
+  for (var y = 0; y < x.length - 1; y++) {//控制总循环次数
+    for (var z = 0; z < x.length - 1 - y; z++) {//控制每一轮循环次数
+      if (x[z] > x[z + 1]) {//前俩个元素作比较
+        var t = x[z];
+        x[z] = x[z + 1];
+        x[z + 1] = t;
+      }
+    }
+  }
+  console.log(x);
+  //  提示用户输入班级人数和成绩，求总成绩，平均值，最高分，最低分
+  var x = parseInt(prompt('请输入班级人数（请为整数）'));
+  var j = [];
+  for (y = 0; y < x; y++) {
+    j[j.length] = parseInt(prompt("请输入第" + (y + 1) + "个人的成绩"));
+  }
+
+  var sum = 0;
+  for (y = 0; y < j.length; y++) {
+    sum += j[y];
+  }
+  document.write("总成绩为" + sum + "<br/>");
+
+  var ave = 0;
+  for (y = 0; y < j.length; y++) {
+    ave += j[y] / j.length;
+  }
+  document.write("平均值" + ave + "<br/>");
+
+  var max = 0;
+  for (y = 0; y < j.length; y++) {
+    if (max < j[y]) {
+      max = j[y];
+    }
+  }
+  document.write("最大值" + max + "<br/>")
+
+  var min = 0;
+  for (y = 0; y < j.length; y++) {
+    if (min > j[y]) {
+      min = j[y];
+    }
+  }
+  document.write("最小值" + min + "<br/>")
+
+</script>
+</body>
+</html>

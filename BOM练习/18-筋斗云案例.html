@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    body {
+
+      background-color: #333;
+
+    }
+
+    .box {
+
+      width: 800px;
+
+      height: 42px;
+
+      margin: 200px auto;
+
+      background: #fff  no-repeat right center;
+
+      border-radius: 12px;
+
+      position: relative;
+
+    }
+
+    ul {
+
+      list-style: none;
+
+      position: absolute;
+
+      top: 0;
+
+      left: 0
+
+    }
+
+    li {
+
+      float: left;
+
+      width: 83px;
+
+      height: 42px;
+
+      text-align: center;
+
+      line-height: 42px;
+
+      cursor: pointer;
+
+    }
+
+    span {
+
+      position: absolute;
+
+      left: 0;
+
+      top: 0;
+
+      width: 83px;
+
+      height: 42px;
+
+      background: url("../img/jindouyun3.png") no-repeat;
+
+    }
+
+  </style>
+</head>
+<body>
+<div class="box" id="dv">
+  <span id="sp"></span>
+  <ul id="ul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+  </ul>
+</div>
+
+<script>
+
+  function f1(element,mubiao) {
+    var dangqian=element.offsetLeft;
+
+    clearInterval(element.test);
+    element.test=setInterval(function () {
+
+      var bushu=(mubiao-dangqian)/10;
+      bushu=bushu>0?Math.ceil(bushu):Math.floor(bushu);
+      dangqian+=bushu;
+      element.style.left=dangqian+'px';
+
+      if(dangqian == mubiao){
+        element.style.left=mubiao+'px';
+        clearInterval(element.test);
+      }
+    },20);
+  }
+
+
+  //获取span标签
+  var spobj=document.getElementById('sp');
+
+  //获取所有的li
+  var ulobj=document.getElementById('ul').children;
+  for (var i=0;i<ulobj.length;i++){
+    //注册鼠标进入事件
+    ulobj[i].onmouseout=onmouseoutHode;
+
+    //注册点击事件
+    ulobj[i].onclick=onclickHode;
+
+    //注册鼠标离开事件
+    ulobj[i].onmouseover=onmouseoverHode
+  }
+
+  //鼠标进入事件函数
+  function onmouseoutHode() {
+    f1(spobj,this.offsetLeft);
+  }
+
+  //点击事件函数
+  var stepeds=0;
+  function onclickHode() {
+    stepeds=this.offsetLeft;
+  }
+
+  //鼠标离开事件函数
+  function onmouseoverHode() {
+    f1(spobj,stepeds);
+  }
+</script>
+</body>
+</html>

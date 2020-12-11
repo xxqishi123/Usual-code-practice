@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .cx{
+      background-color: #3B475F;
+    }
+  </style>
+</head>
+<body id="2">
+<input type="button" value="网页开/关灯" id="1">
+
+<script src="JS.js"></script>
+
+<script>
+//  clss是css样式在script里面不适用，script里面得用clssname
+  id$(1).onclick=function () {
+    if(id$(2).className!='cx'){
+      id$(2).className='cx';
+    }else {
+      id$(2).className='';
+    }
+  }
+</script>
+</body>
+</html>

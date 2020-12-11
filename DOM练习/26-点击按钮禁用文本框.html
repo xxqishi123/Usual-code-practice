@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击按钮禁用文本框</title>
+</head>
+<body>
+<input type="button" value="点击禁用文本框" id="1">
+<input type="text" value="文本框" id="2">
+<script>
+  document.getElementById('1').onclick=function () {
+    document.getElementById('2').disabled=true;
+  };
+</script>
+</body>
+</html>
+
+<!--注意：display是style里面的样式，使用方法是style.display-->
+      <!--disable是方法，就像上面的一样-->

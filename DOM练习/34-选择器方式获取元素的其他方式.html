@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="button" value="显示效果" id="ax" class="dv">
+
+<script>
+  //  选择器的方式获取元素
+  var x = document.querySelector('input');
+  var y = document.querySelector('.dv');
+  var z = document.querySelector('#ax');
+
+  x.onclick = function () {
+    alert('111111');
+  };
+
+
+  //getXXXByXXX 获取的是动态集合，querySelector获取的是静态集合。
+  //简单的说就是，动态就是选出的元素会随文档改变，静态的不会，取出来之后就和文档的改变无关了。
+  //querySelector() 方法仅仅返回匹配指定选择器的第一个元素。如果你需要返回所有的元素，请使用 querySelectorAll() 方法替代。
+</script>
+</body>
+</html>

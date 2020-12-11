@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: #6ad1ff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <input type="button" value="点击按钮创建一个星星并动起来" id="btn">
+    <input type="button" value="点击按钮让星星停止移动" id="btn2">
+
+    <div id="dv">
+    </div>
+
+    <script>
+        function f1() {
+            document.getElementById('11').style.left = parseInt(Math.random() * 300 + 1) + 'px';
+            document.getElementById('11').style.top = parseInt(Math.random() * 300 + 1) + 'px';
+        }
+
+        document.getElementById('btn').onclick = function() {
+            //判断，是否有这个id值，无则创建，有就不管
+            if (!document.getElementById('11')) {
+                //创建元素，赋值，并添加元素
+                var x = document.createElement('span');
+                x.innerHTML = '★';
+                x.id = '11';
+                x.style.position = 'absolute';
+                document.getElementById('dv').appendChild(x);
+            }
+
+            f1();
+            //启动定时器之前先做清理操作
+            clearInterval(document.getElementById('11').text);
+            //创建定时器
+            document.getElementById('11').text = setInterval(f1, 100);
+        };
+
+
+
+        document.getElementById('btn2').onclick = function() {
+            clearInterval(document.getElementById('11').text);
+        };
+    </script>
+
+</body>
+
+</html>

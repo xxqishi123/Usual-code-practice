@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<script src="JS.js"></script>
+<input type="button" value="点击按钮获取第一个P标签的内容" id="a">
+<script>
+  id$('a').onclick=function () {
+    console.log(document.getElementsByTagName('p')[0].innerText);
+  };
+</script>
+</body>
+</html>

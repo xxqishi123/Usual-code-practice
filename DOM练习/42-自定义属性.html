@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<ul>
+  <li score="10">1号成绩</li>
+  <li score="20">2号成绩</li>
+  <li score="30">3号成绩</li>
+  <li score="40">4号成绩</li>
+  <li score="50">5号成绩</li>
+  <li score="60">6号成绩</li>
+</ul>
+
+<script>
+  var x = document.getElementsByTagName('li');
+  for (var y = 0; y < x.length; y++) {
+    x[y].onclick = function () {
+      alert(this.getAttribute('score'));
+    };
+  }
+
+  //  自定义属性，或者在标签中自定义属性，不能直接获取到，必须使用getAttribute('自定义属性的名字')
+</script>
+
+<ul>
+  <li>1号数学成绩</li>
+  <li>2号数学成绩</li>
+  <li>3号数学成绩</li>
+  <li>4号数学成绩</li>
+  <li>5号数学成绩</li>
+  <li>6号数学成绩</li>
+</ul>
+
+<script>
+  var x = document.getElementsByTagName('li');
+  for (var y = 0; y < x.length; y++) {
+    x[y].setAttribute('score', (y + 1) * 10);
+    x[y].onclick = function () {
+      alert(this.getAttribute('score'));
+    };
+  }
+
+//  总结：设置自定义属性setAttribute('名字',值)
+//        获取自定义属性getAttribute('名字')
+//  移除自定义属性,也可以移除自带的属性  removeAttribute('属性名字')
+</script>
+
+</body>
+</html>

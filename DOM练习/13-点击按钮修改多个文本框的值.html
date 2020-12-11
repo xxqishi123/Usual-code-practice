@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+// 点击按钮修改文本框的值
+<input type="button" value="点击按钮修改文本框的值" id="13"><br>
+<input type="text" value="123456"><br>
+<input type="text" value="123456"><br>
+<input type="text" value="123456"><br>
+<input type="text" value="123456"><br>
+<input type="text" value="123456"><br>
+<script>
+  document.getElementById('13').onclick = function () {s
+    var x = document.getElementsByTagName('input');
+    for (var i = 1; i <= x.length; i++)
+      x[i].value = 'zhi bian le';
+  }
+</script>
+
+<input type="button" value="点击按钮修改文本框的值" id="13"><br>
+<div id="14">
+  <input type="text" value="123456"><br>
+  <input type="text" value="123456"><br>
+  <input type="text" value="123456"><br>
+  <input type="text" value="123456"><br>
+  <input type="text" value="123456"><br>
+</div>
+<script>
+  document.getElementById('13').onclick = function () {
+    var x = document.getElementById('14').getElementsByTagName('input');
+    for (var y = 0; y <= x.length; y++)
+      x[y].value = 'haha';
+  }
+</script>
+
+
+<input type="text" value="123456"><br>
+<input type="text" value="123456"><br>
+<input type="text" value="123456"><br>
+<input type="button" value="点击按钮修改属性" id="1"><br>
+<input type="text" value="123456"><br>
+<input type="text" value="123456"><br>
+<input type="text" value="123456"><br>
+<script>
+  document.getElementById('1').onclick = function () {
+    var x = document.getElementsByTagName('input');
+    for (var i = 0; i <= x.length; i++) {
+      if (x[i].type == "text") {
+        x[i].value = "haha";
+      }
+    }
+  }
+</script>
+
+
+</body>
+</html>

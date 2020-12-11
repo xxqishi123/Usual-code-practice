@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script src="../JQ/jquery-1.12.4.js"></script>
+
+    <script src="../VUE/vue.js"></script>
+
+    <div id="dv" @click="cli"></div>
+
+    <script>
+        // // DOM写法
+        // document.getElementById('dv').onclick = function() {
+        //     // 里面要调用this的值，我们需要在外部保存一下
+        //     var _this = this;
+        //     setInterval(function() {
+        //         _this.style.backgroundColor = 'pink';
+        //     }, 2000)
+        // }
+
+        // // ES6写法
+        // document.getElementById('dv').onclick=function(){
+        //     setInterval(() => {
+        //         this.style.backgroundColor='pink'
+        //     }, 2000);
+        // }
+
+        // // JQ写法
+        // $(function() {
+        //     $("div").on("click", function() {
+        //         setInterval(() => {
+        //             this.style.backgroundColor = 'pink';
+        //         }, 2000);
+        //     })
+        // })
+
+        // Vue写法
+        var vm = new Vue({
+            el: '#dv',
+            data: {},
+            methods: {
+                cli() {
+                    this.background = 'pink'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

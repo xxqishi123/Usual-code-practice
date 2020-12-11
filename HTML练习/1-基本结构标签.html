@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<!--<!DOCTYPE html>：文档类型声明标签，告诉浏览器这个页面采取html5版本来显示页面-->
+
+<!--</body lang="en">：告诉浏览器或搜索引擎这是一个英文网站，本页面采取英文显示-->
+
+<!--<meta charset="UTF-8">：（国标码)采取UTF-8来保存文字，不写就会乱码-->
+
+HTML标签：页面中最大的标签，是根标签
+head：文档的头部
+title：文档的标题
+body：文档的主体
+
+
+<p>p标签，是段落标签</p>
+
+
+<br>换行标签
+&nbsp;小于
+&it;大于
+&gt;和
+&amp;乘
+&times;乘
+&divide;除
+
+
+<div>盒子标签，大盒子，霸道，独占一行</div>
+<span>盒子标签，小盒子，一行可以放很多</span>
+
+<a href="www.baidu,com" target="_blank /  _blank">百度</a>
+超链接标签，herf：放地址；俩个尖括号中间放该地址的文字;
+target:目标窗口弹出方式：_blank：新窗口打开 _self：当前窗口打开
+
+<img src="" alt="" title="" width="宽" height="高" border="像素">
+图像标签，src：图片路径，alt：（文本），图片错误显示不出来的时候会用文本代替，alt：鼠标放在图片上面出现的文字
+
+锚点链接
+<a href="#变量名"></a>
+id='变量名'
+<a href="">1</a>
+<a href="">2</a>
+<a href="#value">3</a>
+<p id="#value">3</p>
+
+表格标签
+<table 属性名="属性值"> ---表格标签
+  <tr> ---表格中的行，在table标签里面嵌套使用
+    <th>姓名</th>  <th>性别</th>  <th>年龄</th>  ---表头标签，文字会被加大加粗   </tr>
+  <tr>  <td>1</td>  <td>男</td>  <td>11</td>  ---定义表格中的单元格，嵌套使用（里面没有列的概念） </tr>
+  <tr> <td>2</td>  <td>女</td>  <td>22</td>  </tr>
+
+  属性名：align              border        cellpadding         cellspacing       width
+  属性值：left/center/right  1或者""        像素值
+  属性描述：对齐方式          表格是否有边框  单元边缘与内容的空白   单元格之间的空白    宽度
+</table>
+
+合并单元格
+跨行合并：rowspan=“合并单元格个数”
+<table border="1">
+  <tr><td rowspan="3">1</td>  <td>2</td>  <td>3</td></tr>
+  <tr>  <td>5</td>  <td>6</td></tr>
+  <tr>  <td>8</td>  <td>9</td></tr>
+</table>
+
+跨列合并：colspan=“合并单元格个数”
+<table border="1">
+  <thead>  表格的头部区域
+  <tr><td colspan="3">1</td></tr>
+  </thead>
+  <tbody>  表格的主体区域
+  <tr><td>4</td><td>5</td><td>6</td></tr>
+  <tr><td>7</td><td>8</td><td>9</td></tr>
+  </tbody>
+</table>
+
+列表标签
+  1.无序列表
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+  2.有序列表
+<ol>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ol>
+  3.自定义列表
+<dl>
+  <dt>1</dt>
+  <dd>2</dd>
+  <dd>3</dd>
+</dl>
+
+表单标签
+<form action="url地址" method="get/post（提交方式，俩种）" name="名称">
+  表单控件。。。
+</form>
+  表单控件
+    1.input输入元素
+<input type="属性值">
+button:按钮，与JS配套使用
+checkbox:复选框
+file:定义输入字段和浏览按钮，供文件上传
+hidden:隐藏输入字段
+image:图像形式提交按钮
+password:密码字段，看不见
+radio:单选框
+reset:重置
+submit:提交
+text:单行输入字段。默认20字节
+***input标签中除了type属性外也可以有其他属性
+name：自定义 input元素名称
+value：自定义 规定按钮名字
+checked：元素首次加载时应该被选中(checked='checked')
+maxlength：正整数 规定输入字段中字符最大值
+
+<from>
+  1<input type="radio" name="1">
+  2<input type="radio" name="1">名字相同可以实现这三个按钮只能选一个
+  3<input type="radio" name="1" checked="checked">默认值，元素首次加载时应该被选中
+</from>
+
+label标签
+<form action="">
+  <label for="1">请输入文字：</label><input type="text" id="1">
+</form>
+
+2.select：下拉表单
+<select>
+  <option>1</option>
+  <option>2</option>
+  <option selected="selected">此处是元素首次加载时应该被选中</option>
+</select>
+
+3.textarea：文本域表单
+<textarea>hahahaha</textarea>
+</body>
+</html>

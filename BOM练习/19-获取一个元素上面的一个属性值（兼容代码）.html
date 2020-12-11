@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: #0fffd7;
+
+      position: absolute;
+
+      left: 100px;
+      top: 150px;
+    }
+  </style>
+
+</head>
+<body>
+<div id="dv"></div>
+<input type="button" value="按钮" id="btn">
+
+<script>
+
+  document.getElementById('btn').onclick=function () {
+    //在不脱离文档流的情况下offsetleft无法获得该元素的left属性值，只能用getComputedStyle（）来获取，这个方法支持谷歌和火狐，不支持ie8
+//    console.log(window.getComputedStyle(document.getElementById('dv'),null).left);
+//    console.log(window.getComputedStyle(document.getElementById('dv'),null)['left']);//还可以这样写
+
+    //currentStyle不支持谷歌和火狐，支持ie8
+//    console.log(document.getElementById('dv').currentStyle.left);
+//    console.log(document.getElementById('dv').currentStyle['left']);//还可以这样写
+
+//
+//    console.log(getStyles(document.getElementById('dv'),'left'));//测试调用下面的函数
+//    console.log(getStyles(document.getElementById('dv'),'top'));
+
+    f1(document.getElementById('dv'),800,'top');
+  };
+
+//  所以兼容代码如下
+  function getStyle(element,attr) {
+    if(window.getComputedStyle){
+      return window.getComputedStyle(element,null)[attr];
+    }else{
+      return element.currentStyle[attr];
+    }
+  }
+            //可以用三元表达式
+  function getStyles(element,attr) {
+    return window.getComputedStyle?window.getComputedStyle(element,null)[attr]:element.currentStyle[attr];
+  }
+
+
+
+
+  //注意：此函数有缺陷，只能一次获取一个属性值，不能同时获取多个属性值，如top和width同时获取
+  function f1(element,mubiao,attr) {
+    var dangqian=parseInt(getStyles(element,attr));//此处一定要从字符串转换为整数
+    clearInterval(element.test);
+    element.test=setInterval(function () {
+      var step=(mubiao-dangqian)/10;
+      step=step>0?step:-step;
+      dangqian+=step;
+      element.style[attr]=dangqian+'px';
+      if (dangqian==mubiao){
+        element.style.left=mubiao+'px';
+        clearInterval(element.test);
+      }
+    },20);
+  }
+</script>
+</body>
+</html>
